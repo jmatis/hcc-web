@@ -8,7 +8,7 @@ Simple, build-free website for Hertfordshire Climbing Club.
 - `sessions.html` — regular session information
 - `join.html` — members and joining information
 
-Shared presentation is in `styles.css`. Cloudflare headers and redirects are defined in `_headers` and `_redirects`.
+Shared layout and presentation are in `styles.css`; the rotating CSS illustrations are in `artwork.css`. Cloudflare headers and redirects are defined in `_headers` and `_redirects`.
 
 ## Local preview
 

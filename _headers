@@ -9,6 +9,9 @@
 /styles.css
   Cache-Control: public, max-age=0, must-revalidate
 
+/artwork.css
+  Cache-Control: public, max-age=0, must-revalidate
+
 /site.js
   Cache-Control: public, max-age=0, must-revalidate
 

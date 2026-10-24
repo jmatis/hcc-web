@@ -1,0 +1,286 @@
+.artwork {
+  position: relative;
+  width: min(100%, 22rem);
+  min-height: 26rem;
+  justify-self: end;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 1.5rem;
+  box-shadow: 1.1rem 1.1rem 0 rgba(23, 55, 47, 0.12);
+}
+
+.art-piece {
+  position: absolute;
+  display: block;
+}
+
+.art-holds {
+  background: var(--ink);
+}
+
+.art-holds .one {
+  top: -2rem;
+  right: -3rem;
+  width: 13rem;
+  height: 12rem;
+  border-radius: 45% 55% 62% 38% / 54% 35% 65% 46%;
+  background: var(--orange);
+  transform: rotate(14deg);
+}
+
+.art-holds .two {
+  bottom: 2rem;
+  left: -2rem;
+  width: 14rem;
+  height: 10rem;
+  background: var(--lime);
+  clip-path: polygon(9% 27%, 78% 0, 100% 61%, 68% 100%, 13% 85%, 0 55%);
+  transform: rotate(-8deg);
+}
+
+.art-holds .three {
+  top: 45%;
+  right: 18%;
+  width: 5rem;
+  aspect-ratio: 1;
+  border: 1rem solid var(--paper);
+  border-radius: 50%;
+  transform: rotate(12deg);
+}
+
+.art-crag {
+  background: linear-gradient(155deg, var(--lime), var(--paper) 62%);
+}
+
+.art-crag::before {
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  right: 2rem;
+  width: 8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.art-crag .one {
+  right: -20%;
+  bottom: -5%;
+  width: 125%;
+  height: 82%;
+  background: var(--ink);
+  clip-path: polygon(61% 0, 79% 18%, 75% 32%, 96% 53%, 87% 70%, 100% 100%, 0 100%, 19% 74%, 33% 65%, 39% 39%);
+}
+
+.art-crag .two {
+  right: 5%;
+  bottom: 5%;
+  width: 38%;
+  height: 45%;
+  background: rgba(217, 255, 100, 0.78);
+  clip-path: polygon(58% 0, 100% 0, 70% 100%, 0 74%);
+}
+
+.art-crag .three {
+  z-index: 2;
+  top: 13%;
+  left: 34%;
+  width: 3px;
+  height: 62%;
+  border-radius: 999px;
+  background: var(--lime);
+  transform: rotate(10deg);
+  transform-origin: top;
+}
+
+.art-route {
+  background: var(--orange);
+}
+
+.art-route .one {
+  top: 12%;
+  left: -18%;
+  width: 105%;
+  height: 76%;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: rotate(-18deg);
+}
+
+.art-route .two {
+  z-index: 2;
+  top: 19%;
+  right: 13%;
+  width: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.art-route .three {
+  z-index: 2;
+  right: 30%;
+  bottom: -8%;
+  width: 4px;
+  height: 76%;
+  border-radius: 999px;
+  background: var(--paper);
+  transform: rotate(28deg);
+}
+
+.art-belay {
+  background: var(--ink);
+}
+
+.art-belay::before {
+  content: "";
+  position: absolute;
+  top: -4.5rem;
+  left: 2.5rem;
+  width: 16rem;
+  height: 20rem;
+  border: 0.48rem solid var(--lime);
+  border-radius: 48% 52% 50% 46%;
+  transform: rotate(-8deg);
+}
+
+.art-belay::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 12rem;
+  right: 4.25rem;
+  width: 0.48rem;
+  height: 16rem;
+  border-radius: 999px;
+  background: var(--lime);
+  transform: rotate(12deg);
+  transform-origin: top;
+}
+
+.art-belay .one {
+  z-index: 3;
+  top: 6.2rem;
+  left: 50%;
+  width: 7.4rem;
+  height: 9.2rem;
+  border: 0.38rem solid var(--paper);
+  border-radius: 45% 55% 42% 58% / 35% 38% 62% 65%;
+  background: var(--orange);
+  box-shadow: inset -1.1rem -0.7rem 0 rgba(23, 55, 47, 0.18);
+  transform: translateX(-50%) rotate(8deg);
+}
+
+.art-belay .one::before {
+  content: "";
+  position: absolute;
+  top: 1.2rem;
+  left: 1.45rem;
+  width: 3.6rem;
+  height: 4.9rem;
+  border: 0.38rem solid var(--paper);
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.art-belay .one::after {
+  content: "";
+  position: absolute;
+  right: 0.65rem;
+  bottom: 1.1rem;
+  width: 1.25rem;
+  aspect-ratio: 1;
+  border: 0.25rem solid var(--paper);
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.art-belay .two {
+  z-index: 2;
+  top: 13.1rem;
+  left: 50%;
+  width: 5.3rem;
+  height: 8rem;
+  border: 0.48rem solid var(--paper);
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(-12deg);
+}
+
+.art-belay .two::after {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  right: -0.48rem;
+  width: 1.8rem;
+  height: 0.48rem;
+  border-radius: 999px;
+  background: var(--orange);
+  transform: rotate(54deg);
+}
+
+.art-belay .three {
+  z-index: 4;
+  right: 0.4rem;
+  bottom: 2.2rem;
+  width: 8.2rem;
+  height: 4.1rem;
+  border: 0.3rem solid var(--paper);
+  border-radius: 3.2rem 0.8rem 2.6rem 2.7rem;
+  background: var(--orange);
+  transform: rotate(-18deg);
+}
+
+.art-belay .three::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 1.5rem;
+  width: 3.8rem;
+  height: 2.4rem;
+  border: 0.3rem solid var(--paper);
+  border-radius: 2rem 2rem 0.6rem 0.8rem;
+  background: var(--orange);
+  transform: rotate(24deg);
+}
+
+.art-belay .three::after {
+  content: "";
+  position: absolute;
+  right: -1.2rem;
+  bottom: 0.45rem;
+  width: 4.2rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 0.72rem 0 var(--paper);
+  transform: rotate(8deg);
+}
+
+@media (max-width: 42rem) {
+  .artwork {
+    width: min(100%, 19rem);
+    min-height: 20rem;
+    justify-self: start;
+    box-shadow: 0.75rem 0.75rem 0 rgba(23, 55, 47, 0.12);
+  }
+
+  .art-belay::before {
+    left: 1rem;
+  }
+
+  .art-belay::after {
+    right: 3rem;
+  }
+
+  .art-belay .one {
+    top: 3.7rem;
+  }
+
+  .art-belay .two {
+    top: 10.6rem;
+  }
+
+  .art-belay .three {
+    bottom: 1rem;
+  }
+}
