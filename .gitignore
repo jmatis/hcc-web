@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.wrangler-config/
+.wrangler-dry-run/
+.emdash/
+.env
+.dev.vars
+data.db*
+uploads/
+tmp-emdash-scaffold/

@@ -1,0 +1,46 @@
+---
+import PageText from "../components/PageText.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsOrganization",
+      "@id": "https://hertfordshireclimbingclub.org.uk/#club",
+      name: "Hertfordshire Climbing Club",
+      url: "https://hertfordshireclimbingclub.org.uk/",
+      logo: "https://hertfordshireclimbingclub.org.uk/favicon.svg",
+      description: "A friendly local group for people who enjoy climbing together.",
+      sport: "Climbing",
+      areaServed: { "@type": "AdministrativeArea", name: "Hertfordshire, United Kingdom" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hertfordshireclimbingclub.org.uk/#website",
+      url: "https://hertfordshireclimbingclub.org.uk/",
+      name: "Hertfordshire Climbing Club",
+      inLanguage: "en-GB",
+      publisher: { "@id": "https://hertfordshireclimbingclub.org.uk/#club" },
+    },
+  ],
+};
+---
+
+<SiteLayout
+  title="Hertfordshire Climbing Club"
+  description="Hertfordshire Climbing Club is a friendly local group for people who enjoy climbing together."
+  canonicalPath="/"
+  current="home"
+  structuredData={structuredData}
+>
+  <PageText
+    slug="home"
+    fallback={{
+      eyebrow: "Hertfordshire Climbing Club",
+      title: "Climb with",
+      accent: "good company.",
+      summary: "We are a friendly group of local climbers who enjoy climbing together, sharing time on the wall and encouraging one another.",
+    }}
+  />
+</SiteLayout>

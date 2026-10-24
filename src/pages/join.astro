@@ -1,0 +1,58 @@
+---
+import PageText from "../components/PageText.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { getRuntimeEnv } from "../lib/runtime";
+
+const env = getRuntimeEnv();
+const submitted = Astro.url.searchParams.get("submitted") === "1";
+const error = Astro.url.searchParams.get("error");
+const siteKey = env.TURNSTILE_SITE_KEY;
+---
+
+<SiteLayout
+  title="Join us | Hertfordshire Climbing Club"
+  description="Apply to join Hertfordshire Climbing Club."
+  canonicalPath="/join"
+  current="join"
+  showArtwork={false}
+  wide
+>
+  <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
+  <div class="form-page">
+    <PageText
+      slug="join"
+      fallback={{
+        eyebrow: "Membership",
+        title: "Come and",
+        accent: "join us.",
+        summary: "Complete this short form and the club will use the details to manage your membership and contact you about joining.",
+      }}
+    />
+
+    {submitted && <p class="notice success" role="status">Thank you. Your details have been received.</p>}
+    {error && <p class="notice error" role="alert">Please check the form and try again.</p>}
+
+    {!submitted && (
+      <form class="member-form" method="post" action="/api/join">
+        <div class="form-grid">
+          <label>First name <input name="firstName" autocomplete="given-name" maxlength="80" required /></label>
+          <label>Last name <input name="lastName" autocomplete="family-name" maxlength="80" required /></label>
+          <label>Contact email <input type="email" name="contactEmail" autocomplete="email" maxlength="254" required /></label>
+          <label>Contact phone <input type="tel" name="contactPhone" autocomplete="tel" maxlength="40" required /></label>
+          <label>Emergency contact name <input name="emergencyContactName" maxlength="120" required /></label>
+          <label>Emergency contact phone <input type="tel" name="emergencyContactPhone" maxlength="40" required /></label>
+          <label class="form-span">Address <textarea name="address" autocomplete="street-address" maxlength="500" rows="3"></textarea><span class="field-note">Optional</span></label>
+          <label>HSV member ID <input name="hsvMemberId" maxlength="80" /><span class="field-note">Optional</span></label>
+        </div>
+        <div class="honeypot" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off" /></label></div>
+        {siteKey ? (
+          <div class="cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
+        ) : (
+          <p class="notice error">The joining form is not configured yet.</p>
+        )}
+        <button type="submit" disabled={!siteKey}>Send membership details</button>
+        <p class="privacy-note">These details are used only to manage club membership and emergency contact information.</p>
+      </form>
+    )}
+  </div>
+</SiteLayout>

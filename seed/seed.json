@@ -1,0 +1,77 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": {
+    "name": "Hertfordshire Climbing Club",
+    "description": "Simple club pages managed with EmDash",
+    "author": "Hertfordshire Climbing Club"
+  },
+  "settings": {
+    "title": "Hertfordshire Climbing Club",
+    "tagline": "A friendly group of local climbers"
+  },
+  "collections": [
+    {
+      "slug": "pages",
+      "label": "Pages",
+      "labelSingular": "Page",
+      "urlPattern": "/{slug}",
+      "supports": ["drafts", "revisions", "preview", "seo"],
+      "fields": [
+        { "slug": "title", "label": "Heading", "type": "string", "required": true },
+        { "slug": "accent", "label": "Coloured heading text", "type": "string" },
+        { "slug": "eyebrow", "label": "Small heading", "type": "string" },
+        { "slug": "summary", "label": "Page text", "type": "text", "required": true }
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "name": "primary",
+      "label": "Primary navigation",
+      "items": [
+        { "type": "custom", "label": "Home", "url": "/" },
+        { "type": "custom", "label": "Sessions", "url": "/sessions" },
+        { "type": "custom", "label": "Join us", "url": "/join" },
+        { "type": "custom", "label": "Members", "url": "/members" }
+      ]
+    }
+  ],
+  "content": {
+    "pages": [
+      {
+        "id": "home",
+        "slug": "home",
+        "status": "published",
+        "data": {
+          "eyebrow": "Hertfordshire Climbing Club",
+          "title": "Climb with",
+          "accent": "good company.",
+          "summary": "We are a friendly group of local climbers who enjoy climbing together, sharing time on the wall and encouraging one another."
+        }
+      },
+      {
+        "id": "sessions",
+        "slug": "sessions",
+        "status": "published",
+        "data": {
+          "eyebrow": "Sessions",
+          "title": "Thursday",
+          "accent": "around 8pm.",
+          "summary": "We usually meet every Thursday at around 8pm at Hertfordshire Sports Village climbing wall for an informal group session."
+        }
+      },
+      {
+        "id": "join",
+        "slug": "join",
+        "status": "published",
+        "data": {
+          "eyebrow": "Membership",
+          "title": "Come and",
+          "accent": "join us.",
+          "summary": "Complete this short form and the club will use the details to manage your membership and contact you about joining."
+        }
+      }
+    ]
+  }
+}

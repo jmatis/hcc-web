@@ -1,0 +1,41 @@
+---
+import { getEmDashEntry } from "emdash";
+
+interface Props {
+  slug: "home" | "sessions" | "join";
+  fallback: {
+    eyebrow: string;
+    title: string;
+    accent?: string;
+    summary: string;
+  };
+}
+
+const { slug, fallback } = Astro.props;
+let content = fallback;
+let edit: Record<string, Record<string, string>> = {};
+
+try {
+  const { entry, cacheHint } = await getEmDashEntry("pages", slug);
+  if (entry) {
+    if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+    content = {
+      eyebrow: entry.data.eyebrow || fallback.eyebrow,
+      title: entry.data.title,
+      accent: entry.data.accent,
+      summary: entry.data.summary,
+    };
+    edit = entry.edit as unknown as Record<string, Record<string, string>>;
+  }
+} catch {
+  // The code fallback keeps the public pages available before the first CMS setup.
+}
+---
+
+<section class="content" aria-labelledby="page-title">
+  <p class="eyebrow" {...edit.eyebrow}>{content.eyebrow}</p>
+  <h1 id="page-title" {...edit.title}>
+    {content.title}{content.accent && <> <em {...edit.accent}>{content.accent}</em></>}
+  </h1>
+  <p class="summary" {...edit.summary}>{content.summary}</p>
+</section>

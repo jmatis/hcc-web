@@ -1,0 +1,17 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+Astro.response.status = 404;
+---
+
+<SiteLayout
+  title="Page not found | Hertfordshire Climbing Club"
+  description="The requested page could not be found."
+  canonicalPath="/404"
+  current="home"
+>
+  <section class="content" aria-labelledby="page-title">
+    <p class="eyebrow">404</p>
+    <h1 id="page-title">Page not <em>found.</em></h1>
+    <p class="summary"><a href="/">Return to the home page.</a></p>
+  </section>
+</SiteLayout>

@@ -1,0 +1,21 @@
+---
+import PageText from "../components/PageText.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="Sessions | Hertfordshire Climbing Club"
+  description="Hertfordshire Climbing Club usually meets every Thursday around 8pm at Hertfordshire Sports Village climbing wall."
+  canonicalPath="/sessions"
+  current="sessions"
+>
+  <PageText
+    slug="sessions"
+    fallback={{
+      eyebrow: "Sessions",
+      title: "Thursday",
+      accent: "around 8pm.",
+      summary: "We usually meet every Thursday at around 8pm at Hertfordshire Sports Village climbing wall for an informal group session.",
+    }}
+  />
+</SiteLayout>

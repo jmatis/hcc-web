@@ -209,6 +209,139 @@ main {
   max-width: 52rem;
 }
 
+.form-page {
+  width: min(100%, 52rem);
+  display: grid;
+  gap: 2rem;
+}
+
+.main-wide {
+  align-items: start;
+}
+
+.page-layout-wide {
+  grid-template-columns: 1fr;
+}
+
+.page-layout-single {
+  display: block;
+}
+
+.member-form {
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border: 2px solid var(--ink);
+  border-radius: 1.5rem;
+  background: rgba(255, 253, 247, 0.86);
+  box-shadow: 0.75rem 0.75rem 0 rgba(23, 55, 47, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.member-form label {
+  position: relative;
+  display: grid;
+  gap: 0.4rem;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 780;
+}
+
+.member-form input,
+.member-form textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(23, 55, 47, 0.42);
+  border-radius: 0.65rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 500;
+}
+
+.member-form textarea {
+  resize: vertical;
+}
+
+.member-form input[readonly] {
+  background: rgba(23, 55, 47, 0.08);
+  color: var(--ink-soft);
+}
+
+.form-span {
+  grid-column: 1 / -1;
+}
+
+.field-note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.member-form button {
+  min-height: 3rem;
+  margin-top: 1.35rem;
+  padding: 0.65rem 1.2rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--lime);
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.member-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.cf-turnstile {
+  min-height: 4.1rem;
+  margin-top: 1.35rem;
+}
+
+.privacy-note,
+.field-note {
+  color: var(--ink-soft);
+}
+
+.privacy-note {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+}
+
+.notice {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-left: 0.3rem solid var(--ink);
+  background: rgba(255, 253, 247, 0.82);
+}
+
+.notice.success {
+  border-left-color: #2b785b;
+}
+
+.notice.error {
+  border-left-color: var(--orange);
+}
+
+.honeypot {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .eyebrow {
   margin: 0 0 1.2rem;
   display: flex;
@@ -336,6 +469,19 @@ h1 em {
 
   .summary {
     margin-top: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-span {
+    grid-column: auto;
+  }
+
+  .member-form {
+    border-radius: 1rem;
+    box-shadow: 0.45rem 0.45rem 0 rgba(23, 55, 47, 0.1);
   }
 
 }

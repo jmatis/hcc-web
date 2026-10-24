@@ -1,0 +1,58 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { accessIsConfigured, getMemberIdentity } from "../../lib/auth";
+import { getMember } from "../../lib/members";
+import { getRuntimeEnv, isLocalDevelopment } from "../../lib/runtime";
+
+const env = getRuntimeEnv();
+const identity = await getMemberIdentity(Astro.request, env);
+if (!identity) {
+  const message = accessIsConfigured(env)
+    ? "Authentication required"
+    : "Member authentication has not been configured yet.";
+  return new Response(message, { status: accessIsConfigured(env) ? 401 : 503 });
+}
+
+const member = await getMember(env.DB, identity.email);
+const updated = Astro.url.searchParams.get("updated") === "1";
+const error = Astro.url.searchParams.get("error");
+---
+
+<SiteLayout
+  title="Members | Hertfordshire Climbing Club"
+  description="Private member details for Hertfordshire Climbing Club."
+  canonicalPath="/members"
+  current="members"
+  showArtwork={false}
+  wide
+>
+  <div class="form-page">
+    <section class="content" aria-labelledby="page-title">
+      <p class="eyebrow">Members</p>
+      <h1 id="page-title">Your <em>details.</em></h1>
+      <p class="summary">Keep your contact and emergency information up to date.</p>
+    </section>
+
+    {isLocalDevelopment(env) && <p class="notice">Local development login: {identity.email}</p>}
+    {updated && <p class="notice success" role="status">Your details have been updated.</p>}
+    {error && <p class="notice error" role="alert">Please check the form and try again.</p>}
+
+    {member ? (
+      <form class="member-form" method="post" action="/members/profile">
+        <div class="form-grid">
+          <label>First name <input value={member.first_name} readonly aria-readonly="true" /></label>
+          <label>Last name <input value={member.last_name} readonly aria-readonly="true" /></label>
+          <label>Contact email <input type="email" name="contactEmail" value={member.contact_email} autocomplete="email" maxlength="254" required /></label>
+          <label>Contact phone <input type="tel" name="contactPhone" value={member.contact_phone} autocomplete="tel" maxlength="40" required /></label>
+          <label>Emergency contact name <input name="emergencyContactName" value={member.emergency_contact_name} maxlength="120" required /></label>
+          <label>Emergency contact phone <input type="tel" name="emergencyContactPhone" value={member.emergency_contact_phone} maxlength="40" required /></label>
+          <label class="form-span">Address <textarea name="address" autocomplete="street-address" maxlength="500" rows="3">{member.address ?? ""}</textarea><span class="field-note">Optional</span></label>
+          <label>HSV member ID <input name="hsvMemberId" value={member.hsv_member_id ?? ""} maxlength="80" /><span class="field-note">Optional</span></label>
+        </div>
+        <button type="submit">Save details</button>
+      </form>
+    ) : (
+      <p class="notice error">No membership record is linked to {identity.email}. Apply using the Join us form or ask the club to check the email on your record.</p>
+    )}
+  </div>
+</SiteLayout>

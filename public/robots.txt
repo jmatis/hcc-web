@@ -9,5 +9,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /members
+Disallow: /_emdash
 
 Sitemap: https://hertfordshireclimbingclub.org.uk/sitemap.xml

@@ -1,0 +1,88 @@
+---
+import Artwork from "../components/Artwork.astro";
+import "../../styles.css";
+import "../../artwork.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  current: "home" | "sessions" | "join" | "members";
+  showArtwork?: boolean;
+  structuredData?: object;
+  wide?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  current,
+  showArtwork = true,
+  structuredData,
+  wide = false,
+} = Astro.props;
+const canonical = new URL(canonicalPath, "https://hertfordshireclimbingclub.org.uk").toString();
+const navigation = [
+  { key: "home", label: "Home", href: "/" },
+  { key: "sessions", label: "Sessions", href: "/sessions" },
+  { key: "join", label: "Join us", href: "/join" },
+  { key: "members", label: "Members", href: "/members" },
+] as const;
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={current === "members" ? "noindex, nofollow" : "index, follow, max-snippet:-1"} />
+    <meta name="theme-color" content="#17372f" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Hertfordshire Climbing Club" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <title>{title}</title>
+    {structuredData && (
+      <script type="application/ld+json" nonce={Astro.locals.cspNonce} set:html={JSON.stringify(structuredData)} />
+    )}
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="Hertfordshire Climbing Club — home">
+          <span class="brand-mark" aria-hidden="true">HCC</span>
+          <span>Hertfordshire<br />Climbing Club</span>
+        </a>
+        <details class="menu">
+          <summary class="menu-toggle" aria-label="Navigation menu"><span class="menu-icon" aria-hidden="true"></span></summary>
+          <div class="nav-menu">
+            {navigation.map((item) => (
+              <a class="nav-link" href={item.href} aria-current={current === item.key ? "page" : undefined}>{item.label}</a>
+            ))}
+          </div>
+        </details>
+      </nav>
+    </header>
+    <main id="main-content" class:list={{ "main-wide": wide }}>
+      <div class:list={["page-layout", "container", { "page-layout-wide": wide, "page-layout-single": !showArtwork }]}>
+        <slot />
+        {showArtwork && <Artwork />}
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container">&copy; {new Date().getFullYear()} Hertfordshire Climbing Club</div></footer>
+    <script>
+      import "../scripts/site";
+    </script>
+  </body>
+</html>
