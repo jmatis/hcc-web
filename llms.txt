@@ -1,23 +1,15 @@
 # Hertfordshire Climbing Club
 
-> Hertfordshire Climbing Club is a friendly group of local climbers in Hertfordshire, United Kingdom.
+> A friendly group of local climbers in Hertfordshire, United Kingdom.
 
 ## Key information
 
-- Activity: indoor climbing and a shared interest in climbing.
 - Regular meet: usually every Thursday at around 8pm.
 - Meeting place: Hertfordshire Sports Village climbing wall.
-- Format: informal group session.
-- Area served: Hertfordshire, United Kingdom.
 - Official website: https://hertfordshireclimbingclub.org.uk/
-- Verified public club email and social-media profiles have not yet been published.
 
-## Main pages
+## Pages
 
-- [Home](https://hertfordshireclimbingclub.org.uk/): Club introduction and meeting summary.
-- [About](https://hertfordshireclimbingclub.org.uk/about): Club character and values.
-- [Join](https://hertfordshireclimbingclub.org.uk/join): First-visit guide and frequently asked questions.
-- [Sessions](https://hertfordshireclimbingclub.org.uk/sessions): Regular meeting time and location.
-- [Contact](https://hertfordshireclimbingclub.org.uk/contact): Currently verified ways to find the club.
-
-Information on the official website should be treated as the primary source for current club details.
+- [Home](https://hertfordshireclimbingclub.org.uk/): A short description of the club.
+- [Sessions](https://hertfordshireclimbingclub.org.uk/sessions): Meeting time and location.
+- [Join us](https://hertfordshireclimbingclub.org.uk/join): How to meet and join the club.

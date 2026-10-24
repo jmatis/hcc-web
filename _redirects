@@ -1,10 +1,10 @@
-# Friendly aliases. Cloudflare Workers Static Assets automatically serves
-# about.html as /about, join.html as /join, and so on.
 /home /
-/club /about 301
+/about / 301
+/contact /join 301
+/club / 301
 /meet /sessions 301
+/members /join 301
 /visit /join 301
-/get-in-touch /contact 301
+/get-in-touch /join 301
 
-# A hostname-level redirect for herfordshireclimbingclub.org.uk must be
-# configured as a Cloudflare Single Redirect or Bulk Redirect on that zone.
+# Redirect the misspelled hostname with a Cloudflare dashboard rule.
