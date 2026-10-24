@@ -1,35 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Hertfordshire Climbing Club is a friendly local climbing group. We usually meet on Thursdays around 8pm at Hertfordshire Sports Village climbing wall."
-    />
+    <meta name="description" content="Hertfordshire Climbing Club is a friendly local climbing group meeting on Thursdays around 8pm at Hertfordshire Sports Village climbing wall." />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#17372f" />
     <link rel="canonical" href="https://hertfordshireclimbingclub.org.uk/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
+    <link rel="stylesheet" href="/styles.css" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Hertfordshire Climbing Club" />
-    <meta property="og:title" content="Hertfordshire Climbing Club | Friendly local climbing group" />
-    <meta
-      property="og:description"
-      content="A friendly group of climbers who usually meet on Thursdays around 8pm at Hertfordshire Sports Village climbing wall."
-    />
+    <meta property="og:title" content="Hertfordshire Climbing Club | Climb together" />
+    <meta property="og:description" content="Friendly local climbers meeting on Thursdays around 8pm at Hertfordshire Sports Village climbing wall." />
     <meta property="og:url" content="https://hertfordshireclimbingclub.org.uk/" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Hertfordshire Climbing Club" />
-    <meta
-      name="twitter:description"
-      content="A friendly local climbing group meeting on Thursdays around 8pm at Hertfordshire Sports Village climbing wall."
-    />
-
-    <title>Hertfordshire Climbing Club | Friendly local climbing group</title>
-
+    <meta name="twitter:description" content="Friendly local climbers meeting on Thursdays around 8pm at Hertfordshire Sports Village climbing wall." />
+    <title>Hertfordshire Climbing Club | Climb together</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -42,18 +31,11 @@
             "logo": "https://hertfordshireclimbingclub.org.uk/favicon.svg",
             "description": "A friendly group of climbers who usually meet on Thursdays around 8pm at Hertfordshire Sports Village climbing wall.",
             "sport": "Climbing",
-            "areaServed": {
-              "@type": "AdministrativeArea",
-              "name": "Hertfordshire, United Kingdom"
-            },
+            "areaServed": { "@type": "AdministrativeArea", "name": "Hertfordshire, United Kingdom" },
             "location": {
               "@type": "Place",
               "name": "Hertfordshire Sports Village climbing wall",
-              "address": {
-                "@type": "PostalAddress",
-                "addressRegion": "Hertfordshire",
-                "addressCountry": "GB"
-              }
+              "address": { "@type": "PostalAddress", "addressRegion": "Hertfordshire", "addressCountry": "GB" }
             }
           },
           {
@@ -62,572 +44,36 @@
             "url": "https://hertfordshireclimbingclub.org.uk/",
             "name": "Hertfordshire Climbing Club",
             "inLanguage": "en-GB",
-            "publisher": {
-              "@id": "https://hertfordshireclimbingclub.org.uk/#club"
-            }
+            "publisher": { "@id": "https://hertfordshireclimbingclub.org.uk/#club" }
           }
         ]
       }
     </script>
-
-    <style>
-      :root {
-        color-scheme: light;
-        --ink: #17372f;
-        --ink-soft: #35564d;
-        --chalk: #f7f4eb;
-        --paper: #fffdf7;
-        --lime: #d9ff64;
-        --orange: #ff6b3d;
-        --line: rgba(23, 55, 47, 0.16);
-        --max-width: 1180px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        min-width: 320px;
-        background: var(--chalk);
-        color: var(--ink);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.5;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .site-header {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
-
-      .nav {
-        width: min(calc(100% - 40px), var(--max-width));
-        margin: 0 auto;
-        padding: 28px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-        font-size: 0.82rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        line-height: 1.15;
-        text-transform: uppercase;
-      }
-
-      .brand-mark {
-        width: 42px;
-        aspect-ratio: 1;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--ink);
-        color: var(--lime);
-        font-size: 0.72rem;
-        letter-spacing: -0.06em;
-      }
-
-      .nav-link {
-        padding-bottom: 3px;
-        border-bottom: 2px solid var(--ink);
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 750;
-      }
-
-      .hero {
-        min-height: 760px;
-        position: relative;
-        isolation: isolate;
-        overflow: hidden;
-        display: grid;
-        align-items: center;
-        padding: 150px 0 90px;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        z-index: -3;
-        inset: 0;
-        background:
-          radial-gradient(circle at 20% 18%, rgba(217, 255, 100, 0.8), transparent 26%),
-          linear-gradient(120deg, #f8f5ea 0%, #eee8d8 100%);
-      }
-
-      .hero-grid {
-        width: min(calc(100% - 40px), var(--max-width));
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.75fr);
-        align-items: center;
-        gap: clamp(48px, 8vw, 120px);
-      }
-
-      .eyebrow {
-        margin: 0 0 20px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--ink-soft);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .eyebrow::before {
-        content: "";
-        width: 34px;
-        height: 3px;
-        background: var(--orange);
-      }
-
-      h1 {
-        max-width: 760px;
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(4rem, 9.2vw, 8.8rem);
-        font-weight: 500;
-        letter-spacing: -0.075em;
-        line-height: 0.82;
-      }
-
-      h1 span {
-        display: block;
-        margin-left: clamp(34px, 7vw, 104px);
-        color: var(--orange);
-        font-style: italic;
-      }
-
-      .hero-copy {
-        max-width: 570px;
-        margin: 34px 0 0;
-        font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-        color: var(--ink-soft);
-      }
-
-      .hero-actions {
-        margin-top: 32px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 18px;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 52px;
-        padding: 0 24px;
-        border: 2px solid var(--ink);
-        border-radius: 999px;
-        background: var(--ink);
-        color: white;
-        text-decoration: none;
-        font-size: 0.88rem;
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        transition: transform 160ms ease, background 160ms ease, color 160ms ease;
-      }
-
-      .button:hover,
-      .button:focus-visible {
-        transform: translateY(-2px);
-        background: var(--lime);
-        color: var(--ink);
-      }
-
-      .launch-note {
-        font-size: 0.86rem;
-        font-weight: 700;
-        color: var(--ink-soft);
-      }
-
-      .illustration {
-        position: relative;
-        min-height: 500px;
-      }
-
-      .sun {
-        position: absolute;
-        top: 12%;
-        right: 2%;
-        width: 210px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--orange);
-      }
-
-      .crag {
-        position: absolute;
-        right: -18%;
-        bottom: -28%;
-        width: 126%;
-        height: 112%;
-        background: var(--ink);
-        clip-path: polygon(66% 0, 83% 18%, 78% 31%, 96% 53%, 88% 74%, 100% 100%, 0 100%, 17% 77%, 29% 72%, 34% 49%, 48% 38%);
-      }
-
-      .crag::before,
-      .crag::after {
-        content: "";
-        position: absolute;
-        background: rgba(217, 255, 100, 0.8);
-        clip-path: polygon(58% 0, 100% 0, 70% 100%, 0 74%);
-      }
-
-      .crag::before {
-        width: 34%;
-        height: 47%;
-        top: 23%;
-        right: 7%;
-      }
-
-      .crag::after {
-        width: 18%;
-        height: 30%;
-        right: 38%;
-        bottom: 5%;
-        opacity: 0.2;
-      }
-
-      .climber {
-        position: absolute;
-        z-index: 2;
-        top: 31%;
-        right: 33%;
-        width: 94px;
-        height: 168px;
-        color: white;
-        transform: rotate(7deg);
-      }
-
-      .climber::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 34px;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: currentColor;
-      }
-
-      .climber-body,
-      .climber-arm,
-      .climber-leg {
-        position: absolute;
-        height: 8px;
-        border-radius: 999px;
-        background: currentColor;
-        transform-origin: left center;
-      }
-
-      .climber-body {
-        top: 35px;
-        left: 44px;
-        width: 65px;
-        transform: rotate(92deg);
-      }
-
-      .climber-arm.left {
-        top: 52px;
-        left: 42px;
-        width: 58px;
-        transform: rotate(210deg);
-      }
-
-      .climber-arm.right {
-        top: 48px;
-        left: 48px;
-        width: 62px;
-        transform: rotate(-47deg);
-      }
-
-      .climber-leg.left {
-        top: 97px;
-        left: 48px;
-        width: 66px;
-        transform: rotate(137deg);
-      }
-
-      .climber-leg.right {
-        top: 98px;
-        left: 49px;
-        width: 62px;
-        transform: rotate(48deg);
-      }
-
-      .route-line {
-        position: absolute;
-        z-index: 1;
-        top: 3%;
-        right: 38%;
-        width: 2px;
-        height: 67%;
-        background: var(--lime);
-        transform: rotate(7deg);
-        transform-origin: top;
-      }
-
-      .about {
-        position: relative;
-        z-index: 3;
-        background: var(--paper);
-        border-top: 1px solid var(--line);
-      }
-
-      .about-grid {
-        width: min(calc(100% - 40px), var(--max-width));
-        margin: 0 auto;
-        padding: clamp(70px, 10vw, 130px) 0;
-        display: grid;
-        grid-template-columns: 0.7fr 1.3fr;
-        gap: clamp(40px, 8vw, 120px);
-      }
-
-      .section-label {
-        margin: 7px 0 0;
-        color: var(--orange);
-        font-size: 0.76rem;
-        font-weight: 850;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .about h2 {
-        max-width: 760px;
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.3rem, 5vw, 4.8rem);
-        font-weight: 500;
-        letter-spacing: -0.055em;
-        line-height: 1.02;
-      }
-
-      .pillars {
-        grid-column: 2;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        margin-top: 18px;
-      }
-
-      .pillar {
-        min-height: 190px;
-        padding: 24px;
-        border-top: 1px solid var(--line);
-        background: var(--chalk);
-      }
-
-      .pillar-number {
-        color: var(--orange);
-        font-size: 0.72rem;
-        font-weight: 850;
-        letter-spacing: 0.12em;
-      }
-
-      .pillar h3 {
-        margin: 48px 0 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.35rem;
-        font-weight: 500;
-      }
-
-      .site-footer {
-        padding: 30px 0;
-        background: var(--ink);
-        color: rgba(255, 255, 255, 0.76);
-      }
-
-      .footer-inner {
-        width: min(calc(100% - 40px), var(--max-width));
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        font-size: 0.78rem;
-      }
-
-      .footer-inner strong {
-        color: white;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      @media (max-width: 800px) {
-        .hero {
-          min-height: auto;
-          padding-bottom: 0;
-        }
-
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-
-        h1 {
-          font-size: clamp(4rem, 18vw, 7rem);
-        }
-
-        .illustration {
-          min-height: 430px;
-          margin-top: -20px;
-        }
-
-        .about-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .pillars {
-          grid-column: 1;
-        }
-      }
-
-      @media (max-width: 560px) {
-        .nav {
-          width: min(calc(100% - 28px), var(--max-width));
-        }
-
-        .brand {
-          max-width: 210px;
-        }
-
-        .nav-link {
-          display: none;
-        }
-
-        .hero-grid,
-        .about-grid,
-        .footer-inner {
-          width: min(calc(100% - 28px), var(--max-width));
-        }
-
-        .pillars {
-          grid-template-columns: 1fr;
-        }
-
-        .pillar {
-          min-height: 140px;
-        }
-
-        .pillar h3 {
-          margin-top: 24px;
-        }
-
-        .footer-inner {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-
-        .button {
-          transition: none;
-        }
-      }
-    </style>
+    <script src="/site.js" defer></script>
   </head>
-
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
-      <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="#top" aria-label="Hertfordshire Climbing Club — home">
-          <span class="brand-mark" aria-hidden="true">HCC</span>
-          <span>Hertfordshire<br />Climbing Club</span>
-        </a>
-        <a class="nav-link" href="about.html">About the club</a>
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="Hertfordshire Climbing Club — home"><span class="brand-mark" aria-hidden="true">HCC</span><span>Hertfordshire<br />Climbing Club</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span></button>
+        <div class="nav-menu" id="nav-menu" data-menu data-open="false"><a class="nav-link" href="/" aria-current="page">Home</a><a class="nav-link" href="/about">About</a><a class="nav-link" href="/sessions">Sessions</a><a class="nav-link" href="/join#faq">FAQ</a><a class="nav-link" href="/contact">Contact</a><a class="nav-join" href="/join">Join us</a></div>
       </nav>
     </header>
-
-    <main id="top">
+    <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <p class="eyebrow">Hertfordshire · United Kingdom</p>
-            <h1 id="hero-title">Find your <span>next move.</span></h1>
-            <p class="hero-copy">
-              Hertfordshire Climbing Club brings local climbers together — from first holds to long days on the rock.
-            </p>
-            <div class="hero-actions">
-              <a class="button" href="about.html">Discover the club</a>
-              <span class="launch-note">Full website coming soon</span>
-            </div>
-          </div>
-
-          <div class="illustration" aria-hidden="true">
-            <div class="sun"></div>
-            <div class="crag"></div>
-            <div class="route-line"></div>
-            <div class="climber">
-              <i class="climber-body"></i>
-              <i class="climber-arm left"></i>
-              <i class="climber-arm right"></i>
-              <i class="climber-leg left"></i>
-              <i class="climber-leg right"></i>
-            </div>
-          </div>
+        <div class="hero-grid container">
+          <div><p class="eyebrow">Local climbing · Good company</p><h1 id="hero-title">Find your <em>next move.</em></h1><p class="hero-copy">A friendly Hertfordshire group for people who enjoy climbing together, sharing a session and encouraging one another on the wall.</p><div class="hero-actions"><a class="button" href="/join">Plan your first visit</a><a class="button button-secondary" href="/sessions">See session details</a></div></div>
+          <aside class="hero-card" aria-label="Regular club session"><span class="route-shape" aria-hidden="true"></span><div class="hero-card-content"><span class="hero-card-label">Our regular meet</span><strong>Thursday<br />around 8pm</strong><p>Hertfordshire Sports Village climbing wall</p></div></aside>
         </div>
       </section>
-
-      <section class="about" id="about" aria-labelledby="about-title">
-        <div class="about-grid">
-          <p class="section-label">The club</p>
-          <h2 id="about-title">A place to climb, connect and explore.</h2>
-
-          <div class="pillars" aria-label="What the club is about">
-            <article class="pillar">
-              <span class="pillar-number">01</span>
-              <h3>Local community</h3>
-            </article>
-            <article class="pillar">
-              <span class="pillar-number">02</span>
-              <h3>Shared adventures</h3>
-            </article>
-            <article class="pillar">
-              <span class="pillar-number">03</span>
-              <h3>All kinds of climbing</h3>
-            </article>
-          </div>
-        </div>
+      <section class="section section-paper" aria-labelledby="welcome-title">
+        <div class="split container"><p class="section-label">Welcome to the club</p><div><h2 class="section-heading" id="welcome-title">Climbing is better when you have people beside you.</h2><p class="section-intro">Hertfordshire Climbing Club brings local climbers together for relaxed, sociable sessions. Come for the climbing, stay for the conversation and make the wall feel a little more familiar each week.</p><div class="cards" aria-label="What the club offers"><article class="card"><span class="card-number">01</span><h3>Local community</h3><p>Meet people who climb nearby and enjoy a regular social session.</p></article><article class="card"><span class="card-number">02</span><h3>Shared sessions</h3><p>Climb alongside others and exchange encouragement between routes.</p></article><article class="card"><span class="card-number">03</span><h3>A relaxed welcome</h3><p>Start with the practical details, then come along and say hello.</p></article></div></div></div>
       </section>
+      <section class="section" aria-label="Club meeting summary"><div class="quick-facts container"><div class="fact"><span>When</span><strong>Usually every Thursday, around 8pm</strong></div><div class="fact"><span>Where</span><strong>Hertfordshire Sports Village climbing wall</strong></div><div class="fact"><span>Next step</span><strong><a href="/join">Read the first-visit guide</a></strong></div></div></section>
+      <section class="cta-band" aria-labelledby="cta-title"><div class="cta-inner container"><h2 id="cta-title">Ready to meet the club?</h2><a class="button" href="/join">Start here</a></div></section>
     </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <strong>Hertfordshire Climbing Club</strong>
-        <span>&copy; <span id="year"></span> · Built for the next adventure.</span>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <footer class="site-footer"><div class="footer-grid container"><div><div class="footer-brand">Hertfordshire Climbing Club</div><p class="footer-copy">A friendly local climbing group meeting at Hertfordshire Sports Village climbing wall.</p></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/about">About</a><a href="/sessions">Sessions</a><a href="/join">Join us</a><a href="/join#faq">FAQ</a><a href="/contact">Contact</a></nav></div><div class="footer-meta container">&copy; <span data-year></span> Hertfordshire Climbing Club</div></footer>
+    <a class="mobile-cta" href="/join">Plan your first visit</a>
   </body>
 </html>
