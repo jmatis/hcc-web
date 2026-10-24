@@ -44,21 +44,25 @@
         ]
       }
     </script>
+    <script src="/site.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <nav class="nav container" aria-label="Main navigation">
         <a class="brand" href="/" aria-label="Hertfordshire Climbing Club — home"><span class="brand-mark" aria-hidden="true">HCC</span><span>Hertfordshire<br />Climbing Club</span></a>
-        <div class="nav-links"><a class="nav-link" href="/" aria-current="page">Home</a><a class="nav-link" href="/sessions">Sessions</a><a class="nav-link" href="/join">Join us</a></div>
+        <details class="menu"><summary class="menu-toggle" aria-label="Navigation menu"><span class="menu-icon" aria-hidden="true"></span></summary><div class="nav-menu"><a class="nav-link" href="/" aria-current="page">Home</a><a class="nav-link" href="/sessions">Sessions</a><a class="nav-link" href="/join">Join us</a></div></details>
       </nav>
     </header>
     <main id="main-content">
-      <section class="content container" aria-labelledby="page-title">
-        <p class="eyebrow">Hertfordshire Climbing Club</p>
-        <h1 id="page-title">Climb with <em>good company.</em></h1>
-        <p class="summary">We are a friendly group of local climbers who enjoy climbing together, sharing time on the wall and encouraging one another.</p>
-      </section>
+      <div class="page-layout container">
+        <section class="content" aria-labelledby="page-title">
+          <p class="eyebrow">Hertfordshire Climbing Club</p>
+          <h1 id="page-title">Climb with <em>good company.</em></h1>
+          <p class="summary">We are a friendly group of local climbers who enjoy climbing together, sharing time on the wall and encouraging one another.</p>
+        </section>
+        <div class="artwork" data-artwork aria-hidden="true"><span class="art-piece one"></span><span class="art-piece two"></span><span class="art-piece three"></span></div>
+      </div>
     </main>
     <footer class="site-footer"><div class="container">&copy; 2026 Hertfordshire Climbing Club</div></footer>
   </body>

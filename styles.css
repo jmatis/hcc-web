@@ -64,6 +64,8 @@ a {
 }
 
 .site-header {
+  position: relative;
+  z-index: 20;
   border-bottom: 1px solid var(--line);
   background: var(--paper);
 }
@@ -101,11 +103,73 @@ a {
   letter-spacing: -0.04em;
 }
 
-.nav-links {
+.nav-menu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: clamp(0.8rem, 3vw, 2rem);
+}
+
+.menu {
+  display: contents;
+}
+
+.menu summary {
+  list-style: none;
+}
+
+.menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-toggle {
+  width: 2.8rem;
+  height: 2.8rem;
+  display: none;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  width: 1.1rem;
+  height: 2px;
+  display: block;
+  background: currentColor;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.menu-icon {
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before { top: -0.36rem; }
+.menu-icon::after { top: 0.36rem; }
+
+.menu[open] .menu-icon {
+  background: transparent;
+}
+
+.menu[open] .menu-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu[open] .menu-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 .nav-link {
@@ -129,8 +193,16 @@ main {
   align-items: center;
   padding: clamp(4rem, 10vw, 8rem) 0;
   background:
-    radial-gradient(circle at 12% 18%, rgba(217, 255, 100, 0.72), transparent 22rem),
+    radial-gradient(circle at 12% 18%, rgba(217, 255, 100, 0.9), transparent 24rem),
+    radial-gradient(circle at 88% 82%, rgba(255, 107, 61, 0.34), transparent 26rem),
     linear-gradient(125deg, var(--paper), var(--chalk));
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.65fr);
+  align-items: center;
+  gap: clamp(3rem, 9vw, 8rem);
 }
 
 .content {
@@ -183,6 +255,136 @@ h1 em {
   font-weight: 780;
 }
 
+.artwork {
+  position: relative;
+  width: min(100%, 22rem);
+  min-height: 26rem;
+  justify-self: end;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 1.5rem;
+  box-shadow: 1.1rem 1.1rem 0 rgba(23, 55, 47, 0.12);
+}
+
+.art-piece {
+  position: absolute;
+  display: block;
+}
+
+.art-holds {
+  background: var(--ink);
+}
+
+.art-holds .one {
+  top: -2rem;
+  right: -3rem;
+  width: 13rem;
+  height: 12rem;
+  border-radius: 45% 55% 62% 38% / 54% 35% 65% 46%;
+  background: var(--orange);
+  transform: rotate(14deg);
+}
+
+.art-holds .two {
+  bottom: 2rem;
+  left: -2rem;
+  width: 14rem;
+  height: 10rem;
+  background: var(--lime);
+  clip-path: polygon(9% 27%, 78% 0, 100% 61%, 68% 100%, 13% 85%, 0 55%);
+  transform: rotate(-8deg);
+}
+
+.art-holds .three {
+  top: 45%;
+  right: 18%;
+  width: 5rem;
+  aspect-ratio: 1;
+  border: 1rem solid var(--paper);
+  border-radius: 50%;
+  transform: rotate(12deg);
+}
+
+.art-crag {
+  background: linear-gradient(155deg, var(--lime), var(--paper) 62%);
+}
+
+.art-crag::before {
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  right: 2rem;
+  width: 8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.art-crag .one {
+  right: -20%;
+  bottom: -5%;
+  width: 125%;
+  height: 82%;
+  background: var(--ink);
+  clip-path: polygon(61% 0, 79% 18%, 75% 32%, 96% 53%, 87% 70%, 100% 100%, 0 100%, 19% 74%, 33% 65%, 39% 39%);
+}
+
+.art-crag .two {
+  right: 5%;
+  bottom: 5%;
+  width: 38%;
+  height: 45%;
+  background: rgba(217, 255, 100, 0.78);
+  clip-path: polygon(58% 0, 100% 0, 70% 100%, 0 74%);
+}
+
+.art-crag .three {
+  z-index: 2;
+  top: 13%;
+  left: 34%;
+  width: 3px;
+  height: 62%;
+  border-radius: 999px;
+  background: var(--lime);
+  transform: rotate(10deg);
+  transform-origin: top;
+}
+
+.art-route {
+  background: var(--orange);
+}
+
+.art-route .one {
+  top: 12%;
+  left: -18%;
+  width: 105%;
+  height: 76%;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: rotate(-18deg);
+}
+
+.art-route .two {
+  z-index: 2;
+  top: 19%;
+  right: 13%;
+  width: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.art-route .three {
+  z-index: 2;
+  right: 30%;
+  bottom: -8%;
+  width: 4px;
+  height: 76%;
+  border-radius: 999px;
+  background: var(--paper);
+  transform: rotate(28deg);
+}
+
 .site-footer {
   padding: 1.35rem 0;
   border-top: 1px solid var(--line);
@@ -197,26 +399,65 @@ h1 em {
   }
 
   .nav {
-    min-height: auto;
-    padding: 1rem 0;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.8rem;
+    min-height: 4.8rem;
+    padding: 0;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
   }
 
-  .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 1.1rem;
+  .menu-toggle {
+    display: grid;
+  }
+
+  .menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 0.6rem 0.9rem 1rem;
+    display: none;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 0 1rem 2rem rgba(23, 55, 47, 0.12);
+  }
+
+  .menu[open] .nav-menu {
+    display: grid;
   }
 
   .nav-link {
-    font-size: 0.82rem;
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link[aria-current="page"] {
+    border-bottom-color: var(--orange);
   }
 
   main {
     align-items: start;
     padding: 4rem 0 5rem;
+  }
+
+  .page-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
   }
 
   h1 {
@@ -225,6 +466,13 @@ h1 em {
 
   .summary {
     margin-top: 1.5rem;
+  }
+
+  .artwork {
+    width: min(100%, 19rem);
+    min-height: 20rem;
+    justify-self: start;
+    box-shadow: 0.75rem 0.75rem 0 rgba(23, 55, 47, 0.12);
   }
 }
 
