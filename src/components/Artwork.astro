@@ -1,4 +1,9 @@
-<div class="artwork" data-artwork aria-hidden="true">
+---
+const designs = ["art-holds", "art-crag", "art-route", "art-belay"];
+const design = designs[Math.floor(Math.random() * designs.length)];
+---
+
+<div class:list={["artwork", design]} aria-hidden="true">
   <span class="art-piece one"></span>
   <span class="art-piece two"></span>
   <span class="art-piece three"></span>

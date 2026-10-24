@@ -81,8 +81,20 @@ const navigation = [
       </div>
     </main>
     <footer class="site-footer"><div class="container">&copy; {new Date().getFullYear()} Hertfordshire Climbing Club</div></footer>
-    <script>
-      import "../scripts/site";
+    <script is:inline nonce={Astro.locals.cspNonce}>
+      const navDetails = document.querySelector("details.menu");
+
+      if (navDetails) {
+        let desktopNavigation = window.innerWidth > 672;
+        navDetails.open = desktopNavigation;
+        window.addEventListener("resize", () => {
+          const nowDesktop = window.innerWidth > 672;
+          if (nowDesktop !== desktopNavigation) {
+            navDetails.open = nowDesktop;
+            desktopNavigation = nowDesktop;
+          }
+        });
+      }
     </script>
   </body>
 </html>
