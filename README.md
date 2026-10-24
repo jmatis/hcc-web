@@ -20,6 +20,10 @@ npx serve .
 
 ## Cloudflare deployment
 
-Use `/` as the build output directory with no build command. Workers Static Assets exposes `sessions.html` and `join.html` at `/sessions` and `/join`.
+The Wrangler configuration serves the repository root as Workers Static Assets. Workers Static Assets exposes `sessions.html` and `join.html` at `/sessions` and `/join`.
+
+- `main` is the production branch and deploys with `npx wrangler deploy`.
+- `dev` is the working branch and deploys an isolated Preview with `npx wrangler preview`.
+- `.assetsignore` prevents repository and deployment files from being published as website assets.
 
 Enable Cloudflare Web Analytics in the production Worker dashboard. To redirect the former `herfordshireclimbingclub.org.uk` hostname, create a permanent Cloudflare Single Redirect to the correctly spelled domain while preserving the path and query string.
