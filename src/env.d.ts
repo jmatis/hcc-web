@@ -3,7 +3,6 @@
 
 interface Env {
   DB: D1Database;
-  MEDIA: R2Bucket;
   APP_ENV?: string;
   EMDASH_ENCRYPTION_KEY?: string;
   TURNSTILE_SITE_KEY?: string;

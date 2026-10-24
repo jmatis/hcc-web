@@ -1,6 +1,6 @@
 # Hertfordshire Climbing Club website
 
-The club site is a server-rendered Astro application running on Cloudflare Workers. EmDash provides the CMS at `/_emdash/admin`, D1 stores CMS content and private member details, R2 supports CMS media, Cloudflare Turnstile protects the public application form, and Cloudflare Access authenticates `/members`.
+The club site is a server-rendered Astro application running on Cloudflare Workers. EmDash provides the CMS at `/_emdash/admin`, D1 stores CMS content and private member details, Cloudflare Turnstile protects the public application form, and Cloudflare Access authenticates `/members`. CMS media uploads are disabled until an object-storage binding is added.
 
 ## Public and private routes
 
@@ -30,7 +30,7 @@ npm run build
 
 ## Cloudflare resources
 
-`wrangler.jsonc` names separate production and preview D1 databases and R2 buckets. Cloudflare can provision named resources during the initial deployment. Preview data must remain separate from production data.
+`wrangler.jsonc` names the production D1 database and explicitly binds the separate preview D1 database and KV session namespace. Cloudflare can provision the named production resources during the initial deployment. Preview data remains separate from production data.
 
 Configure these production Worker variables/secrets in Cloudflare before enabling the form and member area:
 
@@ -52,6 +52,6 @@ On the first EmDash admin visit, complete its setup wizard and create the admini
 - `dev` is the development branch and deploys with `npm run deploy:preview`.
 - Production deploys with `npm run deploy`.
 
-The Cloudflare Git build needs `npm run build` as its build command before either Wrangler deploy command. After first deployment, verify `/`, `/join`, `/members`, and `/_emdash/admin` on the relevant hostname.
+The Cloudflare Git build needs `npm run build` as its build command before either Wrangler deploy command. The repository does not hard-code EmDash's site URL, so passkeys bind to the hostname used for each production or preview setup. After first deployment, verify `/`, `/join`, `/members`, and `/_emdash/admin` on the relevant hostname.
 
 Member records contain emergency contact information. Restrict D1 access, keep logs free of submitted form bodies, define a retention/deletion policy, and document who in the club can access this data before accepting real applications.
